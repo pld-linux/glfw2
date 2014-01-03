@@ -1,0 +1,20 @@
+--- glfw-2.7.9/compile.sh.orig	2014-01-02 21:40:39.754714463 +0100
++++ glfw-2.7.9/compile.sh	2014-01-03 16:50:29.355152575 +0100
+@@ -88,7 +88,7 @@
+ case "x`uname 2> /dev/null`" in
+ xLinux)
+   GLFW_LIB_CFLAGS="$GLFW_LIB_CFLAGS -D_GLFW_USE_LINUX_JOYSTICKS"
+-  SOFLAGS="-shared -Wl,-soname,libglfw.so"
++  SOFLAGS="-shared -Wl,-soname,libglfw.so.2"
+   echo "Linux" 1>&6
+   ;;
+ xDarwin)
+@@ -96,7 +96,7 @@
+   echo "Mac OS X" 1>&6
+   ;;
+ *)
+-  SOFLAGS="-shared -soname libglfw.so"
++  SOFLAGS="-shared -soname libglfw.so.2"
+   echo "Generic Unix" 1>&6
+   ;;
+ esac
